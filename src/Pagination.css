@@ -1,3 +1,9 @@
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+  max-width: 150px;
+}
+
 .Pagination__button {
   padding: 12px;
   background-color: steelblue;

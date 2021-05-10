@@ -3,7 +3,7 @@ import './Pagination.css'
 
 export default ({ inActiveLeft, inActiveRight, page }) => {
   return (
-    <div>
+    <section className="Pagination">
       <button
         className={
           inActiveLeft ? 'Pagination__button in-active' : 'Pagination__button'
@@ -19,6 +19,6 @@ export default ({ inActiveLeft, inActiveRight, page }) => {
       >
         &gt;
       </button>
-    </div>
+    </section>
   )
 }
