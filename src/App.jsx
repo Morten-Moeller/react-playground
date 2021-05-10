@@ -12,7 +12,7 @@ export default () => {
       <Button isActive text="Hit me!" />
       <Button text="Hit me hard!" />
       <Pagination inActiveLeft page=" 1/32 " />
-      <Pagination page=" 5/32 " />
+      <Pagination page=" 2/32 " />
       <Pagination inActiveRight page=" 32/32 " />
     </div>
   )
