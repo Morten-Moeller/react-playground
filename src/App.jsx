@@ -13,14 +13,13 @@ export default () => {
       <Header headerText="Profile" isHidden />
       <Button isActive text="Hit me!" />
       <Button text="Hit me hard!" />
-      <Pagination inActiveLeft page=" 1/32 " />
-      <Pagination page=" 2/32 " />
-      <Pagination inActiveRight page=" 32/32 " />
+      <Pagination currentPage={1} totalPage={32} />
+      <Pagination currentPage={2} totalPage={32} />
+      <Pagination currentPage={32} totalPage={32} />
 
       <Card heading="Card 1" paragraph="Lorem ipsum dolor sit." />
       <Card heading="Card 2" paragraph="Lorem ipsum dolor sit." isBookmarked />
       <Card heading="Card 3" paragraph="Lorem ipsum dolor sit." />
-      <Card heading="Card 4" paragraph="Lorem ipsum dolor sit." />
     </div>
   )
 }

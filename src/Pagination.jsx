@@ -1,20 +1,26 @@
 import * as React from 'react'
 import './Pagination.css'
 
-export default ({ inActiveLeft, inActiveRight, page }) => {
+export default ({ currentPage, totalPage }) => {
   return (
     <section className="Pagination">
       <button
         className={
-          inActiveLeft ? 'Pagination__button in-active' : 'Pagination__button'
+          currentPage === 1
+            ? 'Pagination__button in-active'
+            : 'Pagination__button'
         }
       >
         &lt;
       </button>
-      <span className="Pagination__span">{page}</span>
+      <span className="Pagination__span">
+        {currentPage}/{totalPage}
+      </span>
       <button
         className={
-          inActiveRight ? 'Pagination__button in-active' : 'Pagination__button'
+          currentPage === totalPage
+            ? 'Pagination__button in-active'
+            : 'Pagination__button'
         }
       >
         &gt;
