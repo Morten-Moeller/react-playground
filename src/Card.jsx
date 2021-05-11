@@ -3,7 +3,7 @@ import './Card.css'
 
 export default ({ heading, question, answer, isBookmarked }) => {
   const tags = ['trivia', 'q&a', 'english']
-  const renderTags = tags.map(tag => <li>{tag}</li>)
+  const renderTags = tags.map(tag => <li key={tag}>{tag}</li>)
   const bookmark = isBookmarked
     ? 'Card__bookmark Card__bookmark--active'
     : 'Card__bookmark'
