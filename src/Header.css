@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lavender;
+  background-color: steelblue;
+  color: white;
+  width: 500px;
 }
 
 .Header__button {
