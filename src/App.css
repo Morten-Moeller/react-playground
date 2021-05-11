@@ -3,4 +3,6 @@
   justify-items: center;
   margin: 0 auto;
   gap: 18px;
+  font-family: sans-serif;
+  letter-spacing: 0.02rem;
 }
