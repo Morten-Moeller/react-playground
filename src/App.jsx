@@ -4,6 +4,7 @@ import Header from './Header'
 import './App.css'
 import cards from './data.json'
 import decodeHtml from './decodeHtml'
+import Navigation from './Navigation'
 
 export default () => {
   const { question, correct_answer } = cards
@@ -20,6 +21,7 @@ export default () => {
   return (
     <div className="App">
       <Header headerText="Home" isHidden />
+      <Navigation isActive />
       {renderCards}
     </div>
   )
