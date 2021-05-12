@@ -11,11 +11,26 @@
 
 .Card__heading {
   margin: 0;
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 1.25rem;
 }
 
-.Card__paragraph {
+.Card__answer,
+.Card__question {
   margin: 0;
-  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.Card__button {
+  margin: 10px;
+  background-color: steelblue;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 4px 10px;
+  justify-self: center;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
 }
 
 .Card__bookmark {
@@ -25,10 +40,29 @@
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   position: absolute;
-  right: 36px;
+  right: 24px;
   top: -12px;
 }
 
 .Card__bookmark--active {
   background-color: steelblue;
+}
+
+.Card__tag-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.Card__tag-list > li {
+  background-color: rgba(70, 130, 180, 0.5);
+  font-size: 0.75rem;
+  letter-spacing: 0.03rem;
+  padding: 3px 7px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 }
