@@ -7,8 +7,17 @@ import decodeHtml from './decodeHtml'
 import Navigation from './Navigation'
 
 export default () => {
-  const { question, correct_answer } = cards
-  const renderCards = cards.map(
+  return (
+    <div className="App">
+      <Header headerText="Home" isHidden />
+      <Navigation isActive />
+      {renderCards()}
+    </div>
+  )
+}
+
+function renderCards() {
+  return cards.map(
     ({ category: heading, question, correct_answer: answer }) => (
       <Card
         key={question}
@@ -17,12 +26,5 @@ export default () => {
         answer={decodeHtml(answer)}
       />
     )
-  )
-  return (
-    <div className="App">
-      <Header headerText="Home" isHidden />
-      <Navigation isActive />
-      {renderCards}
-    </div>
   )
 }

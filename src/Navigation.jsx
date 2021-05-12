@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './Navigation.css'
 
-export default ({ isActive }) => {
+export default () => {
   return (
     <nav className="Navi">
       <ul className="Navi_list">
