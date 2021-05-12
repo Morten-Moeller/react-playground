@@ -6,3 +6,9 @@
   font-family: sans-serif;
   letter-spacing: 0.02rem;
 }
+
+.Box {
+  height: 50px;
+  width: 50px;
+  background-color: navy;
+}

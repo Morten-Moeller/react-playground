@@ -3,43 +3,79 @@ import { v4 as uuidv4 } from 'uuid'
 import './App.css'
 
 export default () => {
-  const [todos, setTodos] = useState([])
+  const [boxStyle, setBoxStyle] = useState({
+    size: '20',
+    radius: '10',
+    color: '50',
+    shadow: '10',
+  })
+  const { size, radius, color, shadow } = boxStyle
+
+  const style = {
+    height: size + 'px',
+    width: size + 'px',
+    borderRadius: radius + '%',
+    background: 'hsl(' + color + ', 70%, 70%)',
+    boxShadow:
+      shadow / 2 +
+      'px ' +
+      shadow / 2 +
+      'px ' +
+      shadow +
+      'px ' +
+      'rgba(0, 0, 0, 0.75)',
+  }
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <label>
-          Add todo:
-          <input name="todo" type="text" />
-        </label>
-        <button>Add</button>
-      </form>
-      <ul>
-        {todos.map(({ text, isDone, id }) => (
-          <li onClick={() => toggleIsDone(id)} key={id}>
-            {text} {isDone && '✔'}
-          </li>
-        ))}
-      </ul>
+      <label>
+        Size:
+        <input
+          name="size"
+          value={size}
+          onChange={handleChange}
+          type="range"
+          max="200"
+        />
+      </label>
+      <label>
+        Radius:
+        <input
+          name="radius"
+          value={radius}
+          onChange={handleChange}
+          type="range"
+          max="50"
+        />
+      </label>
+      <label>
+        Color:
+        <input
+          name="color"
+          value={color}
+          onChange={handleChange}
+          type="range"
+          max="339"
+        />
+      </label>
+      <label>
+        Shadow:
+        <input
+          name="shadow"
+          value={shadow}
+          onChange={handleChange}
+          type="range"
+          max="30"
+        />
+      </label>
+      <div style={style} className="Box"></div>
     </div>
   )
 
-  function toggleIsDone(id) {
-    const index = todos.findIndex(todo => todo.id === id)
-    const todo = todos[index]
-    setTodos([
-      ...todos.slice(0, index),
-      { ...todo, isDone: !todo.isDone },
-      ...todos.slice(index + 1),
-    ])
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault()
-    const form = event.target
-    const input = form.elements.todo
-    const newTodo = { text: input.value, isDone: false, id: uuidv4() }
-    setTodos([newTodo, ...todos])
-    form.reset()
-    input.focus()
+  function handleChange(event) {
+    const input = event.target
+    setBoxStyle({
+      ...boxStyle,
+      [input.name]: input.value,
+    })
   }
 }
